@@ -1,7 +1,5 @@
-# ------- Xcode -------
-echo "Installing xcode-stuff 👨‍💻"
-xcode-select --install
-# ------- Xcode -------
+# Ask for the administrator password upfront
+sudo -v
 
 # ------- Homebrew -------
 # Check for Homebrew,
@@ -10,7 +8,7 @@ if test ! $(which brew); then
   echo "Installing homebrew... 🍺"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$user/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -22,8 +20,6 @@ brew update
 # ------- Apps -------
 echo "Installing homebrew cask 🧙‍♂️"
 brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus iterm2
-
-open /Applications/Raycast.app
 
 brew cleanup
 # ------- Apps -------
@@ -50,15 +46,11 @@ echo "Host github.com
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 pbcopy < ~/.ssh/id_ed25519.pub
-echo "Your SSH Key copied to clipboard"
-cat ~/.ssh/id_ed25519.pub
 
 # ------- Mac Settings -------
 echo "Setting some Mac settings... ⚙️"
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
-# Ask for the administrator password upfront
-sudo -v
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -67,7 +59,7 @@ defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.Preview ApplePersistenceIgnoreState YES
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library 
 
 # show hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
@@ -130,15 +122,6 @@ defaults write com.apple.dock mineffect -string "scale"
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
-
-# Disable automatic emoji substitution (i.e. use plain text smileys)
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-
-# Disable smart quotes as it’s annoying for messages that contain code
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
-# Disable continuous spell checking
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-br-corner -int 1
