@@ -19,7 +19,8 @@ brew update
 
 # ------- Apps -------
 echo "Installing homebrew cask 🧙‍♂️"
-brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus iterm2
+brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack
+brew install go
 
 brew cleanup
 # ------- Apps -------
@@ -127,3 +128,15 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 0
 # ------- Mac Settings -------
+
+# ------- Node -------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm instsall --lts
+
+npm i -g npm pm2 pnpm
+# ------- Node -------
