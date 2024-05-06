@@ -19,8 +19,8 @@ brew update
 
 # ------- Apps -------
 echo "Installing homebrew cask 🧙‍♂️"
-brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack
-brew install go
+brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty firefox
+brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestion zsh-syntax-highlighting starship neovim
 
 brew cleanup
 # ------- Apps -------
@@ -30,7 +30,6 @@ echo "Git config... 🦸‍♂️"
 git config --global user.name "tung"
 git config --global user.email "nthtung08@gmail.com"
 # ------- Git -------
-
 
 # ------- SSH Key for GitHub -------
 echo "Creating an SSH key for you... 🔐"
@@ -73,6 +72,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # dock setting
 defaults write com.apple.dock tilesize -int 45
+defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 65
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock minimize-to-application -bool true
@@ -124,7 +124,20 @@ defaults write com.apple.dock mineffect -string "scale"
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Bottom left screen corner → Start screen saver
+# Hot corners
+# Possible values:
+#  1: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+# Bottom right screen corner → None
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 0
 # ------- Mac Settings -------
@@ -140,3 +153,28 @@ nvm instsall --lts
 
 npm i -g npm pm2 pnpm
 # ------- Node -------
+
+# ------- Font -------
+brew tap homebrew/cask-fonts
+brew install font-meslo-lg-nerd-font
+# ------- Font -------
+
+# ------- alacritty -------
+mkdir -p ~/.config/alacritty
+cp ./alacritty.toml ~/.config/alacritty/
+# ------- alacritty -------
+
+# ------- tmux -------
+cp ./.tmux.conf ~/
+# ------- tmux -------
+
+# ------- .zshrc -------
+cp ./.zshrc ~/ &&
+source ~/.zshrc
+# ------- .zshrc -------
+
+# ------- neovim -------
+mkdir -p ~/.config
+cp -r nvim ~/.config
+# ------- neovim -------
+
