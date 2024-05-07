@@ -20,7 +20,7 @@ brew update
 # ------- Apps -------
 echo "Installing homebrew cask 🧙‍♂️"
 brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty firefox
-brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestion zsh-syntax-highlighting starship neovim
+brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestions zsh-syntax-highlighting starship neovim
 
 brew cleanup
 # ------- Apps -------
@@ -149,7 +149,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm instsall --lts
+source ~/.zshrc
+
+nvm instsall --lts &&
 
 npm i -g npm pm2 pnpm
 # ------- Node -------
@@ -170,7 +172,6 @@ cp ./.tmux.conf ~/
 
 # ------- .zshrc -------
 cp ./.zshrc ~/ &&
-source ~/.zshrc
 # ------- .zshrc -------
 
 # ------- neovim -------
@@ -178,3 +179,6 @@ mkdir -p ~/.config
 cp -r nvim ~/.config
 # ------- neovim -------
 
+cd 
+git clone git@github.com:junegunn/fzf-git.sh.git
+source ~/.zshrc
