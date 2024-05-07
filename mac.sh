@@ -27,8 +27,9 @@ brew cleanup
 
 # ------- Git -------
 echo "Git config... 🦸‍♂️"
-git config --global user.name "tung"
-git config --global user.email "nthtung08@gmail.com"
+# git config --global user.name "tung"
+# git config --global user.email "nthtung08@gmail.com"
+cp ./.gitconfig ~/.gitconfig
 # ------- Git -------
 
 # ------- SSH Key for GitHub -------
