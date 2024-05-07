@@ -1,4 +1,5 @@
 vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("hi MatchParen cterm=none ctermbg=black ctermfg=white")
 
 local opt = vim.opt
 
@@ -17,6 +18,8 @@ opt.smartcase = true
 
 opt.cursorline = true
 
+-- opt.termguicolors = true
+-- opt.background = "dark"
 opt.signcolumn = "yes"
 
 opt.backspace = "indent,eol,start"
@@ -25,3 +28,5 @@ opt.clipboard:append("unnamedplus")
 
 opt.splitright = true
 opt.splitbelow = true
+
+-- vim.api.nvim_set_hl(1, 'MatchParen', {cterm=none, ctermbg=black, ctermfg=white})
