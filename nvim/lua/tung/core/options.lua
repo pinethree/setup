@@ -29,4 +29,6 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-vim.api.nvim_set_hl(0, 'NormalFloat', {link: "Normal"})
+-- vim.api.nvim_set_hl(1, 'MatchParen', {cterm=none, ctermbg=black, ctermfg=white})
+vim.api.nvim_set_hl(0, "NormalFloat", {link = "Normal"})
+

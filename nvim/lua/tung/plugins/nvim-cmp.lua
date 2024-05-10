@@ -23,12 +23,12 @@ return {
     local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-    -- require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       window = {
         completion = cmp.config.window.bordered({ border = "rounded", scrollbar = false }),
-        documentation = cmp.config.window.bordered({ border = "rounded", scrollbar = false }),
+        documentation = cmp.config.window.bordered({border = "rounded", scrollbar = false}),
       },
       completion = {
         completeopt = "menu,menuone,preview,noselect",
@@ -50,7 +50,7 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp"},
-        -- { name = "luasnip" }, -- snippets
+        { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
       }),
