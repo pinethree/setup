@@ -19,7 +19,7 @@ brew update
 
 # ------- Apps -------
 echo "Installing homebrew cask 🧙‍♂️"
-brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty firefox
+brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty 
 brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestions zsh-syntax-highlighting starship neovim
 
 brew cleanup
@@ -150,8 +150,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.zshrc
-
 nvm instsall --lts &&
 
 npm i -g npm pm2 pnpm
@@ -163,8 +161,7 @@ brew install font-meslo-lg-nerd-font
 # ------- Font -------
 
 # ------- alacritty -------
-mkdir -p ~/.config/alacritty
-cp ./alacritty.toml ~/.config/alacritty/
+cp -r ./alacritty ~/.config/
 # ------- alacritty -------
 
 # ------- tmux -------
@@ -180,6 +177,6 @@ mkdir -p ~/.config
 cp -r nvim ~/.config
 # ------- neovim -------
 
-cd 
-git clone git@github.com:junegunn/fzf-git.sh.git
+# cd 
+# git clone git@github.com:junegunn/fzf-git.sh.git
 source ~/.zshrc
