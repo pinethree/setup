@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/theme.toml"]
+import = ["~/.config/alacritty/themes/catppuccin.toml"]
 live_config_reload = true
 
 [env]
@@ -8,12 +8,12 @@ TERM = "xterm-256color"
 padding.x = 10
 padding.y = 10
 decorations = "buttonless"
-#opacity = 0.95
-#blur = true
+# opacity = 0.9
+# blur = true
 option_as_alt = "Both"
 startup_mode = "Maximized"
 
 [font]
-size = 15
+size = 16
 
 normal.family = "MesloLGS Nerd Font Mono"

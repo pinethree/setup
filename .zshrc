@@ -69,5 +69,3 @@ _fzf_comprun() {
   esac
 }
 
-# bat
-export BAT_THEME=base16

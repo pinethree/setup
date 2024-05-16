@@ -13,22 +13,17 @@ if test ! $(which brew); then
 fi
 
 # Update homebrew recipes
-echo "Updating homebrew... 🆕"
 brew update
 # ------- Homebrew -------
 
 # ------- Apps -------
-echo "Installing homebrew cask 🧙‍♂️"
-brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty 
-brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestions zsh-syntax-highlighting starship neovim
+brew install --cask raycast google-chrome brave-browser telegram discord visual-studio-code logi-options-plus orbstack alacritty tradingview
+brew install go eza fzf fd bat zoxide git-delta rm-improved tree ripgrep tmux zsh-autosuggestions zsh-syntax-highlighting starship neovim wget
 
 brew cleanup
 # ------- Apps -------
 
 # ------- Git -------
-echo "Git config... 🦸‍♂️"
-# git config --global user.name "tung"
-# git config --global user.email "nthtung08@gmail.com"
 cp ./.gitconfig ~/.gitconfig
 # ------- Git -------
 
@@ -49,7 +44,6 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 pbcopy < ~/.ssh/id_ed25519.pub
 
 # ------- Mac Settings -------
-echo "Setting some Mac settings... ⚙️"
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
@@ -150,7 +144,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm instsall --lts &&
+nvm instsall --lts 
 
 npm i -g npm pm2 pnpm
 # ------- Node -------
@@ -160,22 +154,14 @@ brew tap homebrew/cask-fonts
 brew install font-meslo-lg-nerd-font
 # ------- Font -------
 
-# ------- alacritty -------
-cp -r ./alacritty ~/.config/
-# ------- alacritty -------
+cp -r ./.config ~/
 
-# ------- tmux -------
-cp ./.tmux.conf ~/
-# ------- tmux -------
-
-# ------- .zshrc -------
-cp ./.zshrc ~/ &&
-# ------- .zshrc -------
-
-# ------- neovim -------
-mkdir -p ~/.config
-cp -r nvim ~/.config
-# ------- neovim -------
+# mkdir -p ~/.config
+# cp -r ./alacritty ~/.config/
+# cp ./.tmux.conf ~/
+# cp ./.zshrc ~/ 
+# cp -r ./nvim ~/.config
+# cp ./starship.toml ~/.config/
 
 # cd 
 # git clone git@github.com:junegunn/fzf-git.sh.git

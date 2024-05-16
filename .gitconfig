@@ -12,7 +12,11 @@
 [interactive]
   diffFilter = delta --color-only
 
+[include]
+  path = ~/.config/delta/catppuccin.gitconfig
+
 [delta]
+  features = catppuccin-mocha
   navigate = true
   side-by-side = true
 
