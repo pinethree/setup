@@ -155,11 +155,12 @@ brew install font-meslo-lg-nerd-font
 # ------- Font -------
 
 cp -r ./.config ~/
+cp -r ./.zsh ~/
 
 # mkdir -p ~/.config
 # cp -r ./alacritty ~/.config/
-# cp ./.tmux.conf ~/
-# cp ./.zshrc ~/ 
+cp ./.tmux.conf ~/
+cp ./.zshrc ~/ 
 # cp -r ./nvim ~/.config
 # cp ./starship.toml ~/.config/
 
